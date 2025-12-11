@@ -2,21 +2,19 @@
 
 buildscript {
     repositories {
-        maven { url 'https://maven.google.com' } // DAS IST NEU UND WICHTIG
-        jcenter()
+        google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // Wir springen von 2.3.1 auf 4.0.1 (Sehr stabil, funktioniert mit Java 8)
+        classpath 'com.android.tools.build:gradle:4.0.1'
     }
 }
 
 allprojects {
     repositories {
-        maven { url 'https://maven.google.com' } // DAS AUCH
-        jcenter()
+        google()
+        mavenCentral()
     }
 }
 
