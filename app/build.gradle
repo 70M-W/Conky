@@ -8,7 +8,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        // HIER IST DIE NAMENSÄNDERUNG:
+        // App-ID auf org.conky geändert
         applicationId "org.conky" 
         minSdkVersion 21
         targetSdkVersion 29
@@ -39,7 +39,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     
-    // Standard Android Bibliotheken (Version 28 für Kompatibilität)
+    // Standard Android Bibliotheken
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
@@ -50,4 +50,3 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.github.angads25:filepicker:1.1.1'
 }
-```xlsx
