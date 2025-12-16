@@ -4,11 +4,12 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
-    // Wichtig für alte Netzwerk-Befehle
+    // Wichtig für den Zugriff auf Web-Inhalte mit altem Code
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.clw.scorzy"
+        // HIER IST DIE NAMENSÄNDERUNG:
+        applicationId "org.conky" 
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -22,11 +23,13 @@ android {
         }
     }
     
+    // Verhindert Abbruch bei kleinen Fehlern
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
     
+    // Java 8 Support aktivieren
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -36,18 +39,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     
-    // Android Standard Bibliotheken
+    // Standard Android Bibliotheken (Version 28 für Kompatibilität)
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:preference-v7:28.0.0'
 
-    // --- DIE FEHLENDEN TEILE (FIX) ---
-
-    // 1. ButterKnife (Verbindet Code mit Layout, z.B. @BindView)
+    // Externe Bibliotheken (wiederhergestellt)
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-    // 2. FilePicker (Für die Dateiauswahl)
     implementation 'com.github.angads25:filepicker:1.1.1'
 }
+```xlsx
