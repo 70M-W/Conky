@@ -94,18 +94,18 @@ public class CLWService extends Service {
 
     // Erstellt die persistente Benachrichtigung (Pflicht für Android 8+)
     private void startForegroundServiceNotification() {
-        String channelId = "clw_service_channel";
+        String channelId = "conky_service_channel";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
                     channelId,
-                    "CLW Live Update",
+                    "Conky Live Update",
                     NotificationManager.IMPORTANCE_LOW
             );
             getSystemService(NotificationManager.class).createNotificationChannel(channel);
         }
 
         Notification notification = new NotificationCompat.Builder(this, channelId)
-                .setContentTitle("CLW ist aktiv")
+                .setContentTitle("Conky ist aktiv")
                 .setContentText("Aktualisiere Widgets...")
                 .setSmallIcon(R.drawable.notification) // Stelle sicher, dass dieses Icon existiert!
                 .build();
